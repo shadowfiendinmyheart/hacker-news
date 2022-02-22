@@ -1,17 +1,17 @@
 export interface ItemModel {
   id: number;
-  deleted?: boolean;
+  deleted: boolean;
   type: "story" | "comment" | "job" | "poll" | "pollopt";
   by: string;
   time: number;
   text: string;
   dead: boolean;
-  parent?: number;
-  poll?: number;
-  kids?: number[];
+  parent: number;
+  poll: number;
+  kidsIds: number[];
   url: string;
   score: number;
   title: string;
   parts: number[];
-  descendants?: number;
+  descendants: number;
 }
