@@ -3,7 +3,7 @@ import { Story } from "../../models/Story.model";
 import {
   fetchStories,
   refreshStories,
-} from "../action-creators/AppActionCreator";
+} from "../actionCreators/AppActionCreator";
 
 interface AppState {
   storyIds: number[];
