@@ -37,16 +37,9 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <ul>
-        {stories.map(
-          (story) =>
-            story && (
-              <li key={story.id}>
-                <StoryElement {...story} />
-              </li>
-            )
-        )}
-      </ul>
+      {stories.map((story) => {
+        return story && <StoryElement key={story.id} {...story} />;
+      })}
     </div>
   );
 };

@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import AuthRouter from "./components/AuthRouter/AuthRouter";
-
-import "./App.css";
+import AuthRouter from "../AuthRouter/AuthRouter";
 
 function App() {
   return (
