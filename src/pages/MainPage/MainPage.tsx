@@ -7,6 +7,8 @@ import {
 } from "../../store/actionCreators/AppActionCreator";
 import { appSlice } from "../../store/reducers/AppSlice";
 
+import styles from "./MainPage.module.scss";
+
 const MainPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const { storiesFilter } = appSlice.actions;
@@ -36,10 +38,12 @@ const MainPage: React.FC = () => {
   }
 
   return (
-    <div>
-      {stories.map((story) => {
-        return story && <StoryElement key={story.id} {...story} />;
-      })}
+    <div className={styles.wrapper}>
+      <div className={styles.stories}>
+        {stories.map((story) => {
+          return story && <StoryElement key={story.id} {...story} />;
+        })}
+      </div>
     </div>
   );
 };
