@@ -1,0 +1,20 @@
+@import "../../styles/mixins";
+
+.button {
+    @include shadowClickable;
+    background: transparent;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+.loader {
+    width: 33px;
+    position: relative;
+    top: -2px;
+    right: -10px;
+}
+
+.icon {
+    margin-top: 4px;
+}

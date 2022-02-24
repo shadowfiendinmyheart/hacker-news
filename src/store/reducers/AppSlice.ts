@@ -27,7 +27,7 @@ export const appSlice = createSlice({
   reducers: {
     storiesFilter(state) {
       state.stories = state.stories.filter((story) => {
-        return state.storyIds.includes(story.id);
+        return state.storyIds.includes(story?.id);
       });
     },
   },
@@ -57,7 +57,7 @@ export const appSlice = createSlice({
       state.error = "";
       state.storyIds = action.payload.storyIds;
       state.stories = [...action.payload.stories, ...state.stories].filter(
-        (story) => action.payload.storyIds.includes(story.id)
+        (story) => action.payload.storyIds.includes(story?.id)
       );
     },
     [refreshStories.pending.type]: (state) => {
