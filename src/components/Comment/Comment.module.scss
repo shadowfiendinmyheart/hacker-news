@@ -1,0 +1,25 @@
+@import "../../styles/mixins";
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5px 0 15px 10px;
+}
+
+.title {
+    display: flex;
+    gap: 5px;
+}
+
+.author {
+    font-weight: 500;
+}
+
+.text a {
+    @include link;
+}
+
+.loading {
+    margin: 10px;
+}

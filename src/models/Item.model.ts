@@ -1,14 +1,14 @@
 export interface ItemModel {
   id: number;
-  deleted: boolean;
+  deleted?: boolean;
   type: "story" | "comment" | "job" | "poll" | "pollopt";
   by: string;
   time: number;
   text: string;
-  dead: boolean;
+  dead?: boolean;
   parent: number;
   poll: number;
-  kidsIds: number[];
+  kids: number[];
   url: string;
   score: number;
   title: string;

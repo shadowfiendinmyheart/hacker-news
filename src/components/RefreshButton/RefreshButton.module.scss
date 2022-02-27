@@ -2,15 +2,13 @@
 
 .button {
     @include shadowClickable;
+    @include circleButton;
     background: transparent;
-    height: 50px;
-    width: 50px;
-    border-radius: 30px;
 }
 
 .loader {
-    width: 33px;
     position: relative;
+    width: 33px;
     top: -2px;
     right: -10px;
 }

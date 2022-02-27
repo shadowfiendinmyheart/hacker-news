@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+
+.button {
+    @include shadowClickable;
+    height: 15px;
+    width: 20px;
+    background: transparent;
+    border-radius: 30%;
+    margin: 0;
+}

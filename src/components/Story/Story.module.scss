@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+
+.wrapper {
+    @include shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.source {
+    @include link;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}

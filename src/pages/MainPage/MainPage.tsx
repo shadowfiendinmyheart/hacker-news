@@ -1,19 +1,22 @@
 import React, { useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import RefreshButton from "../../components/RefreshButton/RefreshButton";
 import StoryElement from "../../components/StoryElement/StoryElement";
+import LoadingPage from "../LoadingPage/LoadingPage";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import {
   fetchStories,
   refreshStories,
 } from "../../store/actionCreators/AppActionCreator";
 import { appSlice } from "../../store/reducers/AppSlice";
-import LoadingPage from "../LoadingPage/LoadingPage";
+import { ROUTES } from "../../constants/routes";
+import { REFRESH_TIME } from "../../constants";
 
 import styles from "./MainPage.module.scss";
 
 const MainPage: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { storiesFilter } = appSlice.actions;
+  const { clearStories } = appSlice.actions;
   const { stories, isLoading, isUpdating, error } = useAppSelector(
     (state) => state.appReducer
   );
@@ -22,21 +25,21 @@ const MainPage: React.FC = () => {
     dispatch(fetchStories());
 
     const refresher = setInterval(() => {
-      console.log("refreshing...");
       dispatch(refreshStories());
-    }, 60000);
+    }, REFRESH_TIME);
 
     return () => {
+      dispatch(clearStories());
       clearInterval(refresher);
     };
-  }, [dispatch, storiesFilter]);
+  }, [dispatch, clearStories]);
 
   const handleRefreshButtonClick = () => {
     dispatch(refreshStories());
   };
 
   if (error) {
-    return <h1>{error}</h1>;
+    return <Redirect to={ROUTES.ERROR_PAGE} />;
   }
 
   if (isLoading) {

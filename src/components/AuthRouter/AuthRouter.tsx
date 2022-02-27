@@ -11,7 +11,7 @@ const AuthRouter: React.FC = () => {
   return (
     <Switch>
       <Route path={ROUTES.MAIN_PAGE} exact={true} component={MainPage} />
-      <Route path={ROUTES.STORY_PAGE} component={StoryPage} />
+      <Route path={ROUTES.STORY_PAGE} exact={true} component={StoryPage} />
       <Route path={ROUTES.ERROR_PAGE} component={ErrorPage} />
 
       <Redirect to={ROUTES.ERROR_PAGE} />

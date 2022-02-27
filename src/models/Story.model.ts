@@ -5,7 +5,7 @@ export type Story = Pick<
   | "by"
   | "descendants"
   | "id"
-  | "kidsIds"
+  | "kids"
   | "score"
   | "time"
   | "title"
