@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DOMPurify from "dompurify";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import CommentsContainer from "../CommentsContainer/CommentsContainer/CommentsContainer";
+import CommentsContainer from "../CommentsContainer/CommentsContainer";
 import MoreButton from "../MoreButton/MoreButton";
 import LoadingComment from "./LoadingComment";
 import { fetchComment } from "../../store/actionCreators/StoryActionCreator";

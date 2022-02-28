@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "../../Comment/Comment";
+import Comment from "../Comment/Comment";
 
 import styles from "./CommentsContainer.module.scss";
 
