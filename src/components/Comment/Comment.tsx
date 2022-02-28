@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DOMPurify from "dompurify";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import CommentsContainer from "../CommentsContainer/CommentsContainer/CommentsContainer";
 import MoreButton from "../MoreButton/MoreButton";
@@ -41,7 +42,7 @@ const Comment: React.FC<CommentProps> = ({ commentId }) => {
       {comment.text ? (
         <div
           className={styles.text}
-          dangerouslySetInnerHTML={{ __html: comment.text }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.text) }}
         />
       ) : (
         <div>НЛО прилетело и опубликовало эту надпись здесь.</div>
